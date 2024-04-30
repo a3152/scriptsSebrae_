@@ -1,0 +1,510 @@
+{
+  "type": "AdaptiveCard",
+  "body": [
+      {
+          "type": "Image",
+          "id": "imagem1",
+          "url": "https://estagio.ufms.br/files/2023/11/5c2326518b61c8bf2c2839acb7665e8671b1ba0f-1.png",
+          "horizontalAlignment": "Center",
+          "height": "50px"
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto1",
+          "wrap": true,
+          "text": "PROGRAMA APRENDIZ",
+          "horizontalAlignment": "Center",
+          "weight": "Bolder",
+          "size": "ExtraLarge"
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto2",
+          "wrap": true,
+          "text": "AVALIAÇÃO DE DESEMPENHO/ CAPACITAÇÃO PRÁTICA",
+          "horizontalAlignment": "Center"
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto3",
+          "wrap": true,
+          "text": "Nome:"
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto4",
+          "wrap": true
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto5",
+          "wrap": true,
+          "text": "Empresa: Serviço de Apoio as Micro e Pequena Empresa de São Paulo"
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto6",
+          "wrap": true,
+          "text": "Período avaliado: Abril/2024 a Outubro/2024"
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto7",
+          "wrap": true,
+          "text": "Comunicação",
+          "spacing": "ExtraLarge",
+          "size": "ExtraLarge",
+          "weight": "Bolder"
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto8",
+          "wrap": true,
+          "text": "*Comunica-se adequadamente; expressa suas ideias de forma clara e objetiva. Mantém e direciona o fluxo de um diálogo. Uso do vocabulário adequado. Fluência e coerência na escrita.*",
+          "isSubtle": true
+      },
+      {
+          "type": "Input.ChoiceSet",
+          "id": "menuSuspenso_comunica",
+          "choices": [
+              {
+                  "title": "1 - Abaixo das expectativas",
+                  "value": "1"
+              },
+              {
+                  "title": "2 - Atinge parcialmente as expectativas",
+                  "value": "2"
+              },
+              {
+                  "type": "Input.Choice",
+                  "title": "3 - Dentro das expectativas",
+                  "value": "3"
+              },
+              {
+                  "type": "Input.Choice",
+                  "title": "4 - Acima das expectativas",
+                  "value": "4"
+              }
+          ],
+          "placeholder": " "
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto17",
+          "wrap": true,
+          "text": "Conduta Ética",
+          "size": "ExtraLarge",
+          "weight": "Bolder",
+          "separator": true
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto18",
+          "wrap": true,
+          "text": "*Demonstra respeito às pessoas e à empresa como um todo e responsabilidade para com os recursos materiais da empresa e atenção ao vestuário e vocabulário. Conhece e cumpre com as normas estabelecidas pelo Programa de Aprendizagem.*",
+          "isSubtle": true
+      },
+      {
+          "type": "Input.ChoiceSet",
+          "id": "menuSuspenso_cdgEtica",
+          "choices": [
+              {
+                  "title": "1 - Abaixo das expectativas",
+                  "value": "1"
+              },
+              {
+                  "title": "2 - Atinge parcialmente as expectativas",
+                  "value": "2"
+              },
+              {
+                  "type": "Input.Choice",
+                  "title": "3 - Dentro das expectativas",
+                  "value": "3"
+              },
+              {
+                  "type": "Input.Choice",
+                  "title": "4 - Acima das expectativas",
+                  "value": "4"
+              }
+          ],
+          "placeholder": " "
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto19",
+          "wrap": true,
+          "text": "Iniciativa",
+          "size": "ExtraLarge",
+          "weight": "Bolder",
+          "separator": true
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto34",
+          "wrap": true,
+          "text": "*Propõe ideias e sugestões frente às dificuldades.*",
+          "isSubtle": true
+      },
+      {
+          "type": "Input.ChoiceSet",
+          "choices": [
+              {
+                  "title": "1 - Abaixo das expectativas",
+                  "value": "1"
+              },
+              {
+                  "title": "2 - Atinge parcialmente as expectativas",
+                  "value": "2"
+              },
+              {
+                  "title": "3 - Dentro das expectativas",
+                  "value": "3"
+              },
+              {
+                  "title": "4 - Acima das expectativas",
+                  "value": "4"
+              }
+          ],
+          "placeholder": " ",
+          "id": "menuSuspenso_iniciativa"
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto33",
+          "wrap": true,
+          "text": "Dinamismo",
+          "size": "ExtraLarge",
+          "weight": "Bolder",
+          "separator": true
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto32",
+          "wrap": true,
+          "text": "*Demonstra entusiasmo e vitalidade frente às atividades propostas. Mantém interação com o grupo. Sabe lidar com o imprevisto.*",
+          "isSubtle": true
+      },
+      {
+          "type": "Input.ChoiceSet",
+          "choices": [
+              {
+                  "title": "1 - Abaixo das expectativas",
+                  "value": "1"
+              },
+              {
+                  "title": "2 - Atinge parcialmente as expectativas",
+                  "value": "2"
+              },
+              {
+                  "title": "3 - Dentro das expectativas",
+                  "value": "3"
+              },
+              {
+                  "title": "4 - Acima das expectativas",
+                  "value": "4"
+              }
+          ],
+          "placeholder": " ",
+          "id": "menuSuspenso_dinami"
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto31",
+          "wrap": true,
+          "text": "Relacionamento Interpessoal",
+          "size": "ExtraLarge",
+          "weight": "Bolder",
+          "separator": true
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto30",
+          "wrap": true,
+          "text": "*Interage de forma saudável com os funcionários e gestores. Assume comportamentos adequados no trato com as pessoas, revelando bom humor, cortesia, simpatia  e respeito. Sabe lidar com a diversidade do grupo.*",
+          "isSubtle": true
+      },
+      {
+          "type": "Input.ChoiceSet",
+          "choices": [
+              {
+                  "title": "1 - Abaixo das expectativas",
+                  "value": "1"
+              },
+              {
+                  "title": "2 - Atinge parcialmente as expectativas",
+                  "value": "2"
+              },
+              {
+                  "title": "3 - Dentro das expectativas",
+                  "value": "3"
+              },
+              {
+                  "title": "4 - Acima das expectativas",
+                  "value": "4"
+              }
+          ],
+          "placeholder": " ",
+          "id": "menuSuspenso_relaciona"
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto29",
+          "wrap": true,
+          "text": "Flexibilidade",
+          "size": "ExtraLarge",
+          "weight": "Bolder",
+          "separator": true
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto28",
+          "wrap": true,
+          "text": "*Sabe lidar com a diversidade de opiniões. Adapta-se às diferentes situações e exigências do ambiente e das atividades propostas.*",
+          "isSubtle": true
+      },
+      {
+          "type": "Input.ChoiceSet",
+          "choices": [
+              {
+                  "title": "1 - Abaixo das expectativas",
+                  "value": "1"
+              },
+              {
+                  "title": "2 - Atinge parcialmente as expectativas",
+                  "value": "2"
+              },
+              {
+                  "title": "3 - Dentro das expectativas",
+                  "value": "3"
+              },
+              {
+                  "title": "4 - Acima das expectativas",
+                  "value": "4"
+              }
+          ],
+          "placeholder": " ",
+          "id": "menuSuspenso_flex"
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto27",
+          "wrap": true,
+          "text": "Criatividade",
+          "size": "ExtraLarge",
+          "weight": "Bolder",
+          "separator": true
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto26",
+          "wrap": true,
+          "text": "*Contribui constantemente com ideias, alternativas e ações, visando a melhoria do trabalho a ser desenvolvido.*",
+          "isSubtle": true
+      },
+      {
+          "type": "Input.ChoiceSet",
+          "choices": [
+              {
+                  "title": "1 - Abaixo das expectativas",
+                  "value": "1"
+              },
+              {
+                  "title": "2 - Atinge parcialmente as expectativas",
+                  "value": "2"
+              },
+              {
+                  "title": "3 - Dentro das expectativas",
+                  "value": "3"
+              },
+              {
+                  "title": "4 - Acima das expectativas",
+                  "value": "4"
+              }
+          ],
+          "placeholder": " ",
+          "id": "menuSuspenso_criativ"
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto25",
+          "wrap": true,
+          "text": "Aprendizagem",
+          "size": "ExtraLarge",
+          "weight": "Bolder",
+          "separator": true
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto24",
+          "wrap": true,
+          "text": "*Demonstra disposição a aprender, buscar novos conhecimentos para manter-se atualizado e trocar ideias. Contextualiza o conhecimento adquirido na capacitação teórica com a prática.*",
+          "isSubtle": true
+      },
+      {
+          "type": "Input.ChoiceSet",
+          "choices": [
+              {
+                  "title": "1 - Abaixo das expectativas",
+                  "value": "1"
+              },
+              {
+                  "title": "2 - Atinge parcialmente as expectativas",
+                  "value": "2"
+              },
+              {
+                  "title": "3 - Dentro das expectativas",
+                  "value": "3"
+              },
+              {
+                  "title": "4 - Acima das expectativas",
+                  "value": "4"
+              }
+          ],
+          "placeholder": " ",
+          "id": "menuSuspenso_aprend"
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto20",
+          "wrap": true,
+          "text": "Assiduidade/Pontualidade",
+          "size": "ExtraLarge",
+          "weight": "Bolder",
+          "separator": true
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto21",
+          "wrap": true,
+          "text": "*Demonstra assiduidade e pontualidade na sua jornada de aprendizagem, mantendo o Gestor informado, com antecedência, sobre a necessidade de possíveis ausências, alterações de horários.*",
+          "isSubtle": true
+      },
+      {
+          "type": "Input.ChoiceSet",
+          "choices": [
+              {
+                  "title": "1 - Abaixo das expectativas",
+                  "value": "1"
+              },
+              {
+                  "title": "2 - Atinge parcialmente as expectativas",
+                  "value": "2"
+              },
+              {
+                  "title": "3 - Dentro das expectativas",
+                  "value": "3"
+              },
+              {
+                  "title": "4 - Acima das expectativas",
+                  "value": "4"
+              }
+          ],
+          "placeholder": " ",
+          "id": "menuSuspenso_assidui"
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto22",
+          "wrap": true,
+          "text": "Comprometimento",
+          "size": "ExtraLarge",
+          "weight": "Bolder",
+          "separator": true
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto23",
+          "wrap": true,
+          "text": "*Demonstra comprometimento com as atividades e responsabilidades e se dedica a executá-las. Envolve-se com as tarefas propostas.*",
+          "isSubtle": true
+      },
+      {
+          "type": "Input.ChoiceSet",
+          "choices": [
+              {
+                  "title": "1 - Abaixo das expectativas",
+                  "value": "1"
+              },
+              {
+                  "title": "2 - Atinge parcialmente as expectativas",
+                  "value": "2"
+              },
+              {
+                  "title": "3 - Dentro das expectativas",
+                  "value": "3"
+              },
+              {
+                  "title": "4 - Acima das expectativas",
+                  "value": "4"
+              }
+          ],
+          "placeholder": " ",
+          "id": "menuSuspenso_compro"
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto35",
+          "wrap": true,
+          "text": "Planejamento / Organização",
+          "size": "ExtraLarge",
+          "weight": "Bolder",
+          "separator": true
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto36",
+          "wrap": true,
+          "text": "*Cumprimento de prazos. Priorização de tarefas. Organização na execução; Administração de tempo, recursos e materiais.*",
+          "isSubtle": true
+      },
+      {
+          "type": "Input.ChoiceSet",
+          "choices": [
+              {
+                  "title": "1 - Abaixo das expectativas",
+                  "value": "1"
+              },
+              {
+                  "title": "2 - Atinge parcialmente as expectativas",
+                  "value": "2"
+              },
+              {
+                  "title": "3 - Dentro das expectativas",
+                  "value": "3"
+              },
+              {
+                  "title": "4 - Acima das expectativas",
+                  "value": "4"
+              }
+          ],
+          "placeholder": " ",
+          "id": "menuSuspenso_planeja"
+      },
+      {
+          "type": "TextBlock",
+          "id": "rotuloDeTexto37",
+          "wrap": true,
+          "text": "Considerações",
+          "size": "ExtraLarge",
+          "weight": "Bolder",
+          "isSubtle": false,
+          "separator": true
+      },
+      {
+          "type": "Input.Text",
+          "id": "entradaDeTexto1",
+          "isMultiline": true
+      },
+      {
+          "type": "ActionSet",
+          "actions": [
+              {
+                  "type": "Action.Submit",
+                  "title": "Enviar"
+              }
+          ]
+      }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2"
+}
