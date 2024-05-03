@@ -1,4 +1,5 @@
 from bcb import Expectativas
+import matplotlib.pyplot as plt
 
 em = Expectativas()
 em.describe()
@@ -18,3 +19,4 @@ ep.query().filter(ep.Indicador == 'IPCA').limit(10).collect()
  .orderby(ep.Data.desc())
  .limit(10)
  .collect())
+
