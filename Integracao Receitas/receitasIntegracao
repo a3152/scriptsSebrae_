@@ -1,0 +1,25 @@
+declare @lista table (Id int)
+insert into @lista values 
+(3136433)
+
+;
+with agendamento as (
+SELECT * FROM  [HubDados].[RAE].[Pagamento_SolicitacaoVenda_Agendamento]
+WHERE CdVenda in (select id from @lista)
+)
+
+,inscricao as (
+SELECT * FROM  [HubDados].[RAE].[Pagamento_SolicitacaoVenda_Inscricao]
+WHERE CdVenda in (select id from @lista)
+)
+
+,total as ( SELECT * FROM AGENDAMENTO UNION SELECT * FROM inscricao)
+
+SELECT ROW_NUMBER() over(PARTITION BY a.cdvenda order by a.cdvenda) as contagem
+,a.CdVenda,b.Descricao_Plano,B.Descricao_Acao,B.CentroCusto,B.Produto,b.idAtendimentoColetivo
+,A.ValorBruto,a.ValorDesconto,a.ValorLiquido,a.DataCriacao,a.DataAtualizacao FROM total A
+
+LEFT JOIN [UAC].[dbo].[Atendimentos2024_RAE_Completa] B
+ON A.IdAtendimentoAgendamento = B.idAtendimento
+
+order by CdVenda desc
