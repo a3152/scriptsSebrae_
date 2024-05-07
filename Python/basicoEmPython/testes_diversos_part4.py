@@ -19,14 +19,15 @@ s1 = s.upper()
 s1
 s2 = s.capitalize()
 s2
-s[0] = 'd' #não é possivel
+#s[0] = 'd' #não é possivel
 
 #tuplas
 x = (1,2,3)
 y = [1,2,3]
 
 y[0] = 4
-x[0] = 4
+#x[0] = 4 #não é possivel
+
 x
 y
 
