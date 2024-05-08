@@ -10,6 +10,7 @@ class InventarioSchema(DataFrameModel):
     a quantidade em estoque, o preço unitário, se o produto está disponível para venda, e a data de validade do produto.
 
     Atributos:
+            
         nome_produto (str): O nome do produto, como 'Mesa de Escritório'.
         quantidade_estoque (int): A quantidade do produto disponível em estoque.
         preco_unitario (float): O preço unitário do produto.
