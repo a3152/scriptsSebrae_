@@ -27,4 +27,4 @@ def main():
              except Exception as e:
                 st.error(f"Teve erro de schema: {e}")
 if __name__ == "__main__":
-      main()
+      main()    
