@@ -2,3 +2,4 @@
 
 --ctrl + SHIFT + Q
 select * from inventario
+    
