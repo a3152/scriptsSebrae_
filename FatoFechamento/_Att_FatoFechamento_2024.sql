@@ -919,7 +919,7 @@ INSERT INTO [FINANCA].[dbo].[FatoFechamento] --CONVÊNIOS, SUBV. E AUXÍLIOS
 		
 		) a
 
-		where   YEAR([DATA]) = YEAR(@dt) and (Debito like '5.1.1.2%' or Credito like '5.1.1.2%' or Debito like '4.1.3.1%' or Credito like '4.1.3.1%') and IDRATEIO not in ('1929076', '1884747','2161963')
+		where   YEAR([DATA]) = YEAR(@dt) and (Debito like '5.1.1.2%' or Credito like '5.1.1.2%' or Debito like '4.1.3.1%' or Credito like '4.1.3.1%') and IDRATEIO not in ('1929076', '1884747','2161963','2184729')
 
 INSERT INTO [FINANCA].[dbo].[FatoFechamento] --ALIENAÇÃO DE BENS
 
