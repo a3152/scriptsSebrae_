@@ -1,3 +1,4 @@
+use HubDados;
 
 	WITH DEPTO AS (SELECT * FROM HubDados.CorporeRM.GDEPTO WHERE CODFILIAL = 1)
     
