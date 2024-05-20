@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: DadosAbertosBrasil
+Version: 1.1.0
+Summary: Pacote Python para acesso a dados abertos e APIs do governo brasileiro.
+Home-page: https://github.com/GusFurtado/DadosAbertosBrasil
+Download-URL: https://github.com/GusFurtado/DadosAbertosBrasil/archive/1.0.0.tar.gz
+Author: Gustavo Furtado
+Author-email: gustavofurtado2@gmail.com
+License: MIT
+Keywords: brasil,ibge,ipea,ipeadata,camara,deputados,senado,senadores,bacen,bcb,bancocentral,dadosabertos,dadosgovbr
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: Portuguese (Brazilian)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: pandas
+Requires-Dist: requests
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/GusFurtado/dab_assets/main/images/logo.png"><br>
+</div>
+
+---
+
+**Dados Abertos Brasil** é uma iniciativa para facilitar o acesso a dados abertos e APIs do governo brasileiro.
+
+É um pacote open-source para **Python** e **Pandas** e a forma mais simples de acessar dados de instituições como **IGBE**, **IPEA**, **Banco Central**, etc.
+
+Atualmente o pacote Dados Abertos Brasil possui seis módulos, além da classe **[UF](https://www.gustavofurtado.com/DadosAbertosBrasil/uf.html)** que consolida dados diversos de Unidades Federativas em um único objeto.
+
+- DadosAbertosBrasil.**[ibge](https://www.gustavofurtado.com/DadosAbertosBrasil/ibge.html)**
+- DadosAbertosBrasil.**[ipea](https://www.gustavofurtado.com/DadosAbertosBrasil/ipea.html)**
+- DadosAbertosBrasil.**[camara](https://www.gustavofurtado.com/DadosAbertosBrasil/camara.html)**
+- DadosAbertosBrasil.**[senado](https://www.gustavofurtado.com/DadosAbertosBrasil/senado.html)**
+- DadosAbertosBrasil.**[bacen](https://www.gustavofurtado.com/DadosAbertosBrasil/bacen.html)**
+- DadosAbertosBrasil.**[favoritos](https://www.gustavofurtado.com/DadosAbertosBrasil/favoritos.html)**
+
+### Sobre
+- **[Página Oficial](https://www.gustavofurtado.com/dab.html)**
+- **[Documentação](https://www.gustavofurtado.com/DadosAbertosBrasil.html)**
+- **[Exemplos](https://github.com/GusFurtado/dab_assets/tree/main/exemplos)**
+
+### Instalação
+```
+pip install DadosAbertosBrasil
+```
+
+### Dependências
+- Python 3.6 ou superior
+- **[pandas](https://pandas.pydata.org/)**
+- **[requests](https://requests.readthedocs.io/en/master/)**
+
+### Licença
+- **[MIT](LICENSE)**
+
+---
+
+Desenvolvido por: **[Gustavo Furtado](https://www.gustavofurtado.com/)**
