@@ -433,10 +433,13 @@ INSERT INTO [FINANCA].[dbo].[FatoFechamento] --Fundo Mútuo Inv. Empresas Emerg.
 		
 		) a
 
-		where   YEAR([DATA]) = YEAR(@dt) and 
+		where   YEAR([DATA]) = YEAR(GETDATE()) and 
 				(DEBITO not like '2.4.1.1.01%' or DEBITO is null) and
 				COMPLEMENTO is not null and
-				DEBITO like '5.2.5.2.01.001'
+				DEBITO like '5.2.5.2.01.001' OR
+				YEAR([DATA]) = YEAR(GETDATE()) and 
+				CREDITO IN ('5.2.5.2.01.001')
+
 
 INSERT INTO [FINANCA].[dbo].[FatoFechamento] --ENCARGOS DIVERSOS
 
@@ -1032,3 +1035,4 @@ INSERT INTO [FINANCA].[dbo].[FatoFechamento] --CONTRATO INTERNO EXECUTADO
 		where (YEAR([DATA]) = YEAR(@dt) and (Credito like '4.1.3.2.02%' or Debito like '4.1.3.2.02%')) and 
 				(DEBITO not like '2.4.1.1.01%' or DEBITO is null) and
 				COMPLEMENTO is not null
+
