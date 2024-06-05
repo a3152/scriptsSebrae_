@@ -1,0 +1,47 @@
+import PyPDF2
+import re
+import pandas as pd
+from tabulate import tabulate
+import camelot
+
+
+
+
+#Identificação do arquivo
+arquivo = "005 - VIANA ASSESSORIA E CONSULTORIA EIRELI.pdf [manifesto].pdf"
+
+#Abrindo arquivo em modo leitura e lendo binário
+pdf_file =  open("S:/_CON\Monitoramento de Contratos e Convênios/CADASTRO DE CONTRATOS/CREDENCIAMENTO - SGF/CONTRATOS SGF/CONTRATOS SGF 2024/Contratos/"+arquivo,'rb')
+
+
+#Após pegar o binário, pegamos os dados do PDF desse binario
+dados_pdf = PyPDF2.PdfReader(pdf_file)
+
+
+#contando número de páginas
+#print('Número de páginas '+ str(len(dados_pdf.pages)))
+
+
+
+#setando a variavel pagina1 com o objeto pagina1
+pagina1 = dados_pdf.pages[0]
+#setando a variavel pagina2 com o objeto pagina2
+pagina2 = dados_pdf.pages[1]
+
+fields = dados_pdf.get_fields()
+#pegando o texto extraido da pagina1
+texto_da_pagina1 = pagina1.extract_text()
+texto_da_pagina1 = re.sub('\n','',texto_da_pagina1)
+
+#pegando o texto extraido da pagina1
+texto_da_pagina2 = pagina2.extract_text()
+#texto_da_pagina2 = re.sub('\n','',texto_da_pagina2)
+
+#print(texto_da_pagina1)
+print(texto_da_pagina2) 
+
+
+s = pd.Series(texto_da_pagina1)
+
+s.to_excel("output5.xlsx")
+
