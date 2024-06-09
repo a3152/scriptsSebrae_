@@ -26,8 +26,7 @@ for nomesarquivos in  os.listdir(caminho):
         contStrgUnidade = len(Unidade)
 
         GERENTE_LIMITE = '   Gerente'
-        
-    
+            
         cnpj = 'CNPJ/MF nº   '
         contStrgcnpj = len(cnpj)
 
@@ -45,6 +44,7 @@ for nomesarquivos in  os.listdir(caminho):
         constStrgObjeto = len(objeto)
 
         valor = 'Valor:  '
+        quebraValor = '('
         constStrValor = len(valor)
 
         vigencia = 'Vigência: '
@@ -95,6 +95,7 @@ for nomesarquivos in  os.listdir(caminho):
         findnatureza=concatText.find(natureza)
         findObjeto=concatText.find(objeto)
         findValor=concatText.find(valor)
+        findQuebraValor=concatText.find(quebraValor,findValor)
         findVigencia=concatText.find(vigencia)
         findcarga=concatText.find(cargaHoraria)
         findLocal=concatText.find(Local)
@@ -169,15 +170,18 @@ for nomesarquivos in  os.listdir(caminho):
             DATA4_SPLIT = texto_paginaUltima[findQuebra8+3:findQuebra8+22]
 
 
-        #definindo dicionario
+        #definindo dicionario dNomes, com unindo somentes os nomes e quando assinou
         NomeEDatas = { 'dNomes': [[Assinatura1_split,DATA1_SPLIT],
                                   [Assinatura2_split,DATA2_SPLIT],
                                   [Assinatura3_split,DATA3_SPLIT],
                                   [Assinatura4_split,DATA4_SPLIT]]}
+        
         #setando dataframe de nomes e datas de assinaturas
 
         dfNomeDatas2 = pd.DataFrame(NomeEDatas)
-        dfNomeDatas2[['Assinatura','Nome']] = pd.DataFrame(dfNomeDatas2.dNomes.to_list(),index=dfNomeDatas2.index)
+
+        #separando dataframe em colunas distintas baseada na lista do dicionario dNomes
+        dfNomeDatas2[['Assinatura','Data']] = pd.DataFrame(dfNomeDatas2.dNomes.to_list(),index=dfNomeDatas2.index)
         
         #dividindo colunas do dataframe
         dfNomeDatas3 = pd.DataFrame(dfNomeDatas2['dNomes'].to_list(), columns=['Assinatura','Data'])
@@ -186,15 +190,16 @@ for nomesarquivos in  os.listdir(caminho):
         dfNomeDatas3["Data"] = pd.to_datetime(dfNomeDatas3["Data"],dayfirst=True)
 
         #ordenando datas da mais recente para mais anterior
-        dfNomeDataMaisRecente = dfNomeDatas3.sort_values(by='Data', ascending = False, inplace = True)     
+        dfNomeDataMaisRecente = dfNomeDatas3.sort_values(by='Data', ascending = False, inplace = False)     
+        print(dfNomeDataMaisRecente)
         #ordenando datas da mais anterior para mais recente
-        dfNomeDataMaisAnterior = dfNomeDatas3.sort_values(by='Data', ascending = True, inplace = True) 
-        
+        dfNomeDataMaisAnterior = dfNomeDatas3.sort_values(by='Data', ascending = True, inplace = False) 
+        print(dfNomeDataMaisAnterior)
         #criando base
         data=[{}]
         compara_data=[]
 
-        #criando dataframe
+        #criando dataframe  
         df = pd.DataFrame(data)
         df2 = pd.DataFrame(compara_data)
 
@@ -208,7 +213,7 @@ for nomesarquivos in  os.listdir(caminho):
         df["CPF"] = concatText[findcpf+ contStrgCPF:findcpf+contStrgCPF+16]
         df["Natureza prestação de serviço"] = concatText[findnatureza+contStrgNatureza:findnatureza+contStrgNatureza+12]
         df["Objeto"] = concatText[findObjeto+constStrgObjeto:findObjeto+constStrgObjeto+232]
-        df["Valor"] = concatText[findValor+constStrValor:findValor+constStrValor+12]
+        df["Valor"] = concatText[findValor+constStrValor:findQuebraValor]
         df["Vigência"] = concatText[findVigencia+constStrVigencia:findVigencia+constStrVigencia+23]
         df["Carga Horária"] = concatText[findcarga+constStrgCargaHoraria:findLocal]
         df["Local de Execução"] = concatText[findLocal+constStrgLocal:findLocal+constStrgLocal+12]
