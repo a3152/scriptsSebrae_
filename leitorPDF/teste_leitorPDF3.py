@@ -3,6 +3,9 @@ import pandas as pd
 from PyPDF2 import PdfReader
 from datetime import datetime
 import re
+import time
+
+start_time = time.time()
 
 #setando caminho
 caminho = "//10.27.210.32/_con\Monitoramento de Contratos e Convênios/CADASTRO DE CONTRATOS/CREDENCIAMENTO - SGF/CONTRATOS SGF/CONTRATOS SGF 2024/Contratos"
@@ -191,10 +194,10 @@ for nomesarquivos in  os.listdir(caminho):
 
         #ordenando datas da mais recente para mais anterior
         dfNomeDataMaisRecente = dfNomeDatas3.sort_values(by='Data', ascending = False, inplace = False)     
-        print(dfNomeDataMaisRecente)
+        
         #ordenando datas da mais anterior para mais recente
         dfNomeDataMaisAnterior = dfNomeDatas3.sort_values(by='Data', ascending = True, inplace = False) 
-        print(dfNomeDataMaisAnterior)
+        
         #criando base
         data=[{}]
         compara_data=[]
@@ -286,4 +289,5 @@ for nomesarquivos in  os.listdir(caminho):
         #uni as dfs
         df = pd.concat(lst, axis=0 )
         
-df.to_excel("final_v01.xlsx")   
+df.to_excel("final_v01.xlsx")
+print("--- %s seconds ---" % (time.time() - start_time))   
