@@ -4,13 +4,20 @@ from PyPDF2 import PdfReader
 from datetime import datetime
 import re
 import time
+from pathlib import Path
 
 start_time = time.time()
 
 #setando caminho
-caminho = "//10.27.210.32/_con\Monitoramento de Contratos e Convênios/CADASTRO DE CONTRATOS/CREDENCIAMENTO - SGF/CONTRATOS SGF/CONTRATOS SGF 2024/Contratos"
+#caminho = "//10.27.210.32/_con\Monitoramento de Contratos e Convênios/CADASTRO DE CONTRATOS/CREDENCIAMENTO - SGF/CONTRATOS SGF/CONTRATOS SGF 2024/Contratos"
 
 #caminho = "C:/Users/cesargl/OneDrive - SERVICO DE APOIO AS MICRO E PEQUENAS EMPRESAS DE SAO PAULO - SEBRAE/.git/scriptsSebrae_/teste_arquivos"
+
+#caminho = "https://sebraesp-my.sharepoint.com/:f:/g/personal/millenysar_sebraesp_com_br/EvBDn2FsC2tClPuKO_pWbBAB0OWUrdv0EyJuas6uFtCcdg?e=No5mPi"
+
+
+#CAMINHO CORRETO
+caminho = "C:/Users/cesargl/OneDrive - SERVICO DE APOIO AS MICRO E PEQUENAS EMPRESAS DE SAO PAULO - SEBRAE/Contratos"
 #define serie
 lst=[]
 
@@ -282,11 +289,17 @@ for nomesarquivos in  os.listdir(caminho):
         df["ASSINAMAISANTERIOR"] = dfNomeDataMaisAnterior['Assinatura'].iloc[0]
 
         df["nome_arquivo"] = nomesarquivos
+
+        diretorio = Path(caminho)
+        arquivo = diretorio/nomesarquivos
+        tmpModificado = os.path.getmtime(arquivo)
         
+        df["DTMODIFICADO"] =  time.ctime(tmpModificado)
+        df["DTMODIFICADO"] = pd.to_datetime(df["DTMODIFICADO"],dayfirst=True)
         lst.append(df)
         
         print(nomesarquivos)
-        #uni as dfs
+        #uni as dfs 
         df = pd.concat(lst, axis=0 )
         
 df.to_excel("final_v01.xlsx")
