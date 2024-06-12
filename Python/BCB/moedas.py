@@ -15,7 +15,7 @@ ptax.describe('CotacaoMoedaDia')
 ep = ptax.get_endpoint('CotacaoMoedaDia')
 
 (ep.query()
-   .parameters(moeda='AUD', dataCotacao='1/31/2022')
+   .parameters(moeda='ARS', dataCotacao='1/31/2022')
    .collect())
 
 ptax.describe('CotacaoMoedaPeriodo')
