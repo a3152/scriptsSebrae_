@@ -6,6 +6,10 @@ import re
 import time
 from pathlib import Path
 
+dataHoje = datetime.today()
+hoje = dataHoje.strftime('%d-%m-%Y')
+nome = 'Consolidado.csv'
+
 start_time = time.time()
 
 #setando caminho
@@ -17,20 +21,24 @@ start_time = time.time()
 
 
 #CAMINHO CORRETO
-caminho = "C:/Users/cesargl/OneDrive - SERVICO DE APOIO AS MICRO E PEQUENAS EMPRESAS DE SAO PAULO - SEBRAE/Contratos"
+caminho = "C:/Users/cesargl/OneDrive - SERVICO DE APOIO AS MICRO E  PEQUENAS EMPRESAS DE SAO PAULO - SEBRAE/Contratos"
+
 #define serie
 lst=[]
 
 #loop para pegar todos os arquivos+caminho
 for nomesarquivos in  os.listdir(caminho):
-       # Abrindo arquivos
+       # Abrindo arquivos 
     with open(os.path.join(caminho, nomesarquivos)) as f: 
-        pdf_file = open(f.name,'rb')  
+
+        pdf_file = open(f.name,'rb')    
         dados_pdf = PdfReader(pdf_file)
         
+
         #define e faz contagem de caracteres dos objetos procurados
         numContrato = 'CONTRATO DE PRESTAÇÃO DE SERVIÇOS  Nº '
         contStrgContrato = len(numContrato)
+        Sistema = 'SISTEMA'
 
         Unidade = 'Unidade/ER demandante: '
         contStrgUnidade = len(Unidade)
@@ -98,6 +106,7 @@ for nomesarquivos in  os.listdir(caminho):
 
         #achando os valores no texto
         findContrato=concatText.find(numContrato)
+        findSistema=concatText.find(Sistema)
         findUnidade=concatText.find(Unidade)
         findCnpj=concatText.find(cnpj,700)
         findRepresentante=concatText.find(representante)
@@ -216,7 +225,7 @@ for nomesarquivos in  os.listdir(caminho):
         
 
         #definindo colunas
-        df["N° Contrato"] = concatText[findContrato+contStrgContrato:findContrato+contStrgContrato+10]
+        df["N° Contrato"] = concatText[findContrato+contStrgContrato:findSistema]
         df["Unidade"] = concatText[findUnidade+contStrgUnidade:findGERENTE]
         df["CNPJ"] = concatText[findCnpj+contStrgcnpj:findCnpj+contStrgcnpj+19]
         df["Representante"] = concatText[findRepresentante+contStrgrepresentante:findRG]
@@ -260,7 +269,7 @@ for nomesarquivos in  os.listdir(caminho):
 
         #convertendo datas em datetime
         df["DATA1"] = pd.to_datetime(df["DATA1"],dayfirst=True)
-        df["DATA2"] = pd.to_datetime(df["DATA2"],dayfirst=True)
+        df["DATA2"] = pd.to_datetime(df["DATA2"],dayfirst=True) 
         df["DATA3"] = pd.to_datetime(df["DATA3"],dayfirst=True)
         df["DATA4"] = pd.to_datetime(df["DATA4"],dayfirst=True)
 
@@ -301,6 +310,7 @@ for nomesarquivos in  os.listdir(caminho):
         print(nomesarquivos)
         #uni as dfs 
         df = pd.concat(lst, axis=0 )
-        
-df.to_excel("final_v01.xlsx")
+        df.to_csv(f'{hoje}-{nome}', index = False)
+
+
 print("--- %s seconds ---" % (time.time() - start_time))   
