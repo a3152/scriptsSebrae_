@@ -21,7 +21,7 @@ start_time = time.time()
 
 
 #CAMINHO CORRETO
-caminho = "C:/Users/cesargl/OneDrive - SERVICO DE APOIO AS MICRO E  PEQUENAS EMPRESAS DE SAO PAULO - SEBRAE/Contratos"
+caminho = r"C:\Users\cesargl\OneDrive - SERVICO DE APOIO AS MICRO E PEQUENAS EMPRESAS DE SAO PAULO - SEBRAE\Contratos"
 
 #define serie
 lst=[]
