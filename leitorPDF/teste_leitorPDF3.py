@@ -25,7 +25,7 @@ caminho = r"C:\Users\cesargl\OneDrive - SERVICO DE APOIO AS MICRO E PEQUENAS EMP
 
 #define serie
 lst=[]
-
+        
 #loop para pegar todos os arquivos+caminho
 for nomesarquivos in  os.listdir(caminho):
        # Abrindo arquivos 
