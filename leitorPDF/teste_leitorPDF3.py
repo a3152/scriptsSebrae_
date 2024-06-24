@@ -86,7 +86,7 @@ for nomesarquivos in  os.listdir(caminho):
 
         #define paginas do documento para leitura
         
-        ultimapagina=dados_pdf.numPages-1
+        ultimapagina= len(dados_pdf.pages)-1
 
         pagina1 = dados_pdf.pages[0]
         texto_da_pagina1 = pagina1.extract_text()
