@@ -20,6 +20,7 @@
     ,UPPER(D.NOME) AS GESTOR
     ,UPPER(E.NOME) AS GERENTE
     ,I.CODCCUSTO
+	,J.PROJETO
 
     FROM TMOV a
     INNER JOIN vw_status b
@@ -38,8 +39,10 @@
     ON G.IDPRD = H.IDPRD
     LEFT JOIN RATEIO I
     ON A.IDMOV = I.IDMOV
+	LEFT JOIN [FINANCA].[dbo].[CentroDeCusto$] J
+	ON I.CODCCUSTO COLLATE Latin1_General_CI_AS = J.CentroCusto
 
 
-    WHERE CODTMV LIKE '1.1.08'
+    WHERE I.CODCCUSTO LIKE '00059%'
 
     order by DATACRIACAO desc
